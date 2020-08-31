@@ -1,5 +1,8 @@
 package com.app.gmailcompose.model
 
+import androidx.compose.runtime.Immutable
+
+@Immutable
 data class MailData(
     val mailId: Long,
     val userImage: Int,
