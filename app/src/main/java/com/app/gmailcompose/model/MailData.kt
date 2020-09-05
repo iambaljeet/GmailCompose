@@ -7,6 +7,7 @@ data class MailData(
     val mailId: Long,
     val userImage: Int,
     val userName: String,
+    val userMail: String,
     val subject: String,
     val mailText: String,
     val timeStamp: String

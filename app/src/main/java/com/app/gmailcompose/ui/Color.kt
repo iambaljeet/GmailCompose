@@ -10,3 +10,5 @@ val teal200 = Color(0xFF03DAC5)
 
 val creamColor = Color(parseColor("#DBDBDF"))
 val lightBlueColor = Color(parseColor("#89B4F7"))
+val whiteColor = Color(parseColor("#FFFFFF"))
+val blackColor = Color(parseColor("#000000"))

@@ -5,12 +5,14 @@ import androidx.compose.foundation.ScrollableColumn
 import androidx.compose.foundation.layout.InnerPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
+import com.app.gmailcompose.model.MailData
 import com.app.gmailcompose.state.HomeUiState
 
 @Composable
 fun MailList(
     uiState: HomeUiState,
-    scrollState: ScrollState
+    scrollState: ScrollState,
+    onMailItemClicked: (mailData: MailData) -> Unit
 ) {
     ScrollableColumn(
         contentPadding = InnerPadding(
@@ -19,7 +21,10 @@ fun MailList(
         scrollState = scrollState
     ) {
         uiState.mails.forEach { mails ->
-            MailItem(mailData = mails)
+            MailItem(
+                    mailData = mails,
+                    onMailItemClicked = onMailItemClicked
+            )
         }
     }
 }

@@ -10,9 +10,11 @@ import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.setContent
 import androidx.compose.ui.unit.dp
-import com.app.gmailcompose.components.AppBar
 import com.app.gmailcompose.components.ExpandableFab
+import com.app.gmailcompose.components.HomeTopBar
 import com.app.gmailcompose.components.MailList
+import com.app.gmailcompose.components.NavDrawer
+import com.app.gmailcompose.data.drawerUiState
 import com.app.gmailcompose.data.homeUiState
 import com.app.gmailcompose.ui.GmailComposeTheme
 
@@ -29,12 +31,20 @@ class MainActivity : AppCompatActivity() {
                             ExpandableFab(scrollState)
                         },
                         topBar = {
-                            AppBar()
+                            HomeTopBar()
                         },
                         bodyContent = {
                             MailList(
                                 uiState = homeUiState,
-                                scrollState = scrollState
+                                scrollState = scrollState,
+                                    onMailItemClicked = { mailData ->
+                                        MailActivity.launch(this, mailData.mailId)
+                                    }
+                            )
+                        },
+                        drawerContent = {
+                            NavDrawer(
+                                uiState = drawerUiState
                             )
                         }
                     )

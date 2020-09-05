@@ -1,6 +1,7 @@
 package com.app.gmailcompose.components
 
 import androidx.compose.foundation.Icon
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
@@ -16,12 +17,14 @@ import com.app.gmailcompose.model.MailData
 
 @Composable
 fun MailItem(mailData: MailData,
-             modifier: Modifier = Modifier) {
+             modifier: Modifier = Modifier,
+             onMailItemClicked: (mailData: MailData) -> Unit) {
     Row(
-        modifier = modifier.padding(
-            start = 15.dp, end = 15.dp, top = 10.dp
-        ),
-        verticalGravity = Alignment.CenterVertically
+            modifier = modifier.padding(
+                    start = 15.dp, end = 15.dp, top = 10.dp
+            )
+                    .clickable(onClick = { onMailItemClicked(mailData) }),
+            verticalGravity = Alignment.CenterVertically
     ) {
         CircularImage(
             imageAsset = imageResource(id = mailData.userImage),
