@@ -14,7 +14,7 @@
 ## Demo
 ![](https://github.com/iambaljeet/GmailCompose/blob/master/art/demoUI.webp)
 
-**GmailCompose** is an Android applciation 📱 for showcasing Jetpack Compose for building declarative UI in Android.
+**GmailCompose** is an Android application 📱 for showcasing Jetpack Compose for building declarative UI in Android.
 
 
 ## About
